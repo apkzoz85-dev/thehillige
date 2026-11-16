@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════════════ */
 
 export const SITE = {
-  domain: "https://thehillage-zayed.com", // ← غيّره للدومين الحقيقي
+  domain: "https://thehillage.org", // ← غيّره للدومين الحقيقي
   name: "ذا هيلدج الشيخ زايد",
   nameLatin: "The Hillage",
   developer: "مدار للتطوير العقاري",
@@ -20,10 +20,10 @@ export const SITE = {
   // 2) لو فاضي، الفورم بيبعت على FormSubmit للإيميلات اللي تحت
   web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
   leadEmail: "apkzoz85@gmail.com",
-  leadCc: "abdoo.elrean@gmail.com",
+  leadCc: "",
 
   // Google Ads
-  adsId: "AW-18109309038",
+  adsId: "",
   conversions: {
     form: "", // ← label تحويل الفورم  (مثال: "AbCdEfGh123")
     whatsapp: "", // ← label تحويل الواتساب
