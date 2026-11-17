@@ -46,24 +46,31 @@ export default function LeadForm({ source, unit, cta = "ابعتلي الأسع�
     }
     const subject = `ليد جديد — ذا هيلدج الشيخ زايد — ${unitType}`
 
+    // مفيش مفتاح Web3Forms → الليد يروح واتساب بدل ما يضيع
+    if (!SITE.web3formsKey) {
+      track("form", source)
+      window.open(
+        waLink(`مرحباً، أنا ${payload.name} — رقمي ${payload.phone}. مهتم بـ ${unitType} في ذا هيلدج الشيخ زايد.`),
+        "_blank",
+      )
+      setLoading(false)
+      return
+    }
+
     try {
-      let ok = false
-      if (SITE.web3formsKey) {
-        const r = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ access_key: SITE.web3formsKey, subject, from_name: "The Hillage Landing", ...payload }),
-        })
-        ok = r.ok
-      } else {
-        const r = await fetch(`https://formsubmit.co/ajax/${SITE.leadEmail}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ ...payload, _subject: subject, _cc: SITE.leadCc, _captcha: "false", _template: "table" }),
-        })
-        ok = r.ok
-      }
-      if (!ok) throw new Error()
+      const r = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: SITE.web3formsKey,
+          subject,
+          from_name: "The Hillage Landing",
+          botcheck: "",
+          ...payload,
+        }),
+      })
+      const data = await r.json().catch(() => ({}))
+      if (!r.ok || data.success === false) throw new Error(data.message || "send failed")
       track("form", source)
       try {
         sessionStorage.setItem("lead_done", "1")

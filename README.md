@@ -8,4 +8,4 @@ Next.js 16 static landing — Arabic RTL — "لاندين مونتن فيو" st
 ## الرفع على Vercel
 1. امسح كل الملفات القديمة من الريبو وارفع محتوى الفولدر ده.
 2. Vercel هيعمل `npm install` و `next build` لوحده.
-3. (اختياري) حط `NEXT_PUBLIC_WEB3FORMS_KEY` في Environment Variables لو عايز الليدز على Web3Forms بدل FormSubmit.
+3. (اختياري) حط `NEXT_PUBLIC_WEB3FORMS_KEY` في Environment Variables (مفتاح Web3Forms — لازم عشان الليدز توصل إيميل).

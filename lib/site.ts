@@ -15,12 +15,11 @@ export const SITE = {
   whatsapp: "201119436202",
   waDefault: "مرحباً، أريد معرفة الأسعار والوحدات المتاحة في ذا هيلدج الشيخ زايد من مدار",
 
-  // استقبال الليدز
-  // 1) لو حطيت مفتاح Web3Forms هنا أو في Vercel (NEXT_PUBLIC_WEB3FORMS_KEY) الفورم هيبعت عليه
-  // 2) لو فاضي، الفورم بيبعت على FormSubmit للإيميلات اللي تحت
+  // استقبال الليدز — Web3Forms بس
+  // حط الـ Access Key هنا، أو في Vercel كـ NEXT_PUBLIC_WEB3FORMS_KEY
+  // (المفتاح بيتعمل من web3forms.com بالإيميل اللي عايز الليدز توصله)
+  // لو المفتاح فاضي: الفورم بيفتح واتساب برسالة فيها بيانات العميل عشان الليد مايضيعش
   web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
-  leadEmail: "apkzoz85@gmail.com",
-  leadCc: "abdoo.elrean@gmail.com",
 
   // Google Ads
   adsId: "AW-18109309038",
