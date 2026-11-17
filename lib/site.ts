@@ -20,11 +20,6 @@ export const SITE = {
   // (المفتاح بيتعمل من web3forms.com بالإيميل اللي عايز الليدز توصله)
   // لو المفتاح فاضي: الفورم بيفتح واتساب برسالة فيها بيانات العميل عشان الليد مايضيعش
   web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
-<<<<<<< HEAD
-=======
-  leadEmail: "apkzoz85@gmail.com",
-  leadCc: "",
->>>>>>> b537fa1ba6b567aeea82254550a8775b21d8178a
 
   // Google Ads
   adsId: "",
