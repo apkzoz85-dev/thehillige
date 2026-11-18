@@ -19,7 +19,7 @@ export const SITE = {
   // حط الـ Access Key هنا، أو في Vercel كـ NEXT_PUBLIC_WEB3FORMS_KEY
   // (المفتاح بيتعمل من web3forms.com بالإيميل اللي عايز الليدز توصله)
   // لو المفتاح فاضي: الفورم بيفتح واتساب برسالة فيها بيانات العميل عشان الليد مايضيعش
-  web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
+  web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "e2af07c7-9058-4f19-8afb-80fabe5ebdb0",
 
   // Google Ads
   adsId: "",
